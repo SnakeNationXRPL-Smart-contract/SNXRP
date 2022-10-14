@@ -1,66 +1,66 @@
 //Connecting to xrpLedger
 
-// async function getXRPL() {
-//   const api = new xrpl.Client("wss://xrplcluster.com");
+async function getXRPL() {
+  const api = new xrpl.Client("wss://xrplcluster.com");
 
-//   // const api = new xrpl.Client("wss://s.altnet.rippletest.net/")
+  // const api = new xrpl.Client("wss://s.altnet.rippletest.net/")
 
-//   // console.log(api)
+  // console.log(api)
 
-//   await api.connect();
+  await api.connect();
 
-//   let response = await api.request({
-//     command: "ledger",
-//     ledger_index: "validated",
-//     transactions: true,
-//   });
+  let response = await api.request({
+    command: "ledger",
+    ledger_index: "validated",
+    transactions: true,
+  });
 
-//   console.log();
+  console.log();
 
-//   let transaction_id = response.result.ledger.transactions[0];
+  let transaction_id = response.result.ledger.transactions[0];
 
-//   let transaction_response = await api.request({
-//     "command": "tx",
-//     "transaction": transaction_id
-//   });
+  let transaction_response = await api.request({
+    "command": "tx",
+    "transaction": transaction_id
+  });
 
-//   console.log(transaction_response);
-// }
-// getXRPL();
+  console.log(transaction_response);
+}
+getXRPL();
 
-// async function createWallet(){
+async function createWallet(){
 
 //.net:portNumber
-//   const api = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
+  const api = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
 
-//   await api.connect()
+  await api.connect()
 
-//   const wallet = xrpl.Wallet.generate()
+  const wallet = xrpl.Wallet.generate()
 
-//   console.log(wallet)
+  console.log(wallet)
 
-//   api.disconnect()
+  api.disconnect()
 
-// }
+}
 
-// createWallet()
+createWallet()
 
-// async function fundWallet(){
+async function fundWallet(){
 
 //   //.net:portNumber
-//   const api = new xrpl.Client("wss://s.altnet.rippletest.net")
+  const api = new xrpl.Client("wss://s.altnet.rippletest.net")
 
-//   await api.connect()
+  await api.connect()
 
-//   const wallet = await api.fundWallet()
+  const wallet = await api.fundWallet()
 
-//   console.log(wallet.balance)
+  console.log(wallet.balance)
 
-//   api.disconnect()
+  api.disconnect()
 
-// }
+}
 
-// fundWallet()
+fundWallet()
 
 async function sendXRP() {
   //.net:portNumber
@@ -90,9 +90,9 @@ async function sendXRP() {
 
   console.log(signed)
   
-  // console.log(walletObject2)
+  console.log(walletObject2)
 
-  // console.log(walletObject)
+  console.log(walletObject)
 
   api.disconnect();
 }
